@@ -1,7 +1,7 @@
 export const products = [
   {
     id: 1,
-    name: "Swill Roll",
+    name: "Swiss Roll",
     price: 15,
     image: "/1.png",
     description:
