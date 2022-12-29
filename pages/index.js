@@ -8,8 +8,8 @@ const Index = () => {
   const router = useRouter();
   const [cart, setCart] = useState([]);
   const addItems = (val) => {
-    const description = document.getElementById(val.id).value;
-    setCart([...cart, { ...val, description }]);
+    const cookingInstruction = document.getElementById(val.id).value;
+    setCart([...cart, { ...val, cookingInstruction }]);
   };
   const deleteItem = (id) => {
     const modifiedCart = cart?.filter((item) => item.id !== id);
@@ -17,25 +17,28 @@ const Index = () => {
   };
   const handleCheckOut = () => {
     console.log(cart);
-    // router.push("/thankyou");
+    router.push("/thankyou");
   };
   return (
     <div className="flex flex-col items-center justify-center">
-      <div className=" md:flex-row flex flex-col gap-4 mt-[100px]">
+      <div className=" md:flex-row flex flex-col gap-4 mt-[100px] ">
         {" "}
         {products.map((val) => {
           return (
-            <div className="border p-4">
+            <div className="border p-4 w-[350px]">
               <img src={val.image} alt="" className=" h-[250px]" />
               <div className="flex justify-center mt-2 text-2xl">
                 {val.name}
               </div>{" "}
               <div className="flex justify-center mt-2">${val.price}</div>
+              <div className="flex justify-center items-center mt-2 h-[100px] w-full">
+                {val.description}
+              </div>
               <div className="flex mt-5 justify-center">
                 <input
                   className="border p-2"
                   id={`${val.id}`}
-                  placeholder="Add description"
+                  placeholder="Cooking Instruction"
                   type="text"
                 />
               </div>
