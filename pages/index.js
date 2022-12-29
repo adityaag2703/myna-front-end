@@ -63,10 +63,10 @@ const Index = () => {
           );
         })}
       </div>
-      <div className=" mt-6 flex justify-end items-end ">
+      <div className="mt-6 flex justify-end items-end ">
         {cart.length ? (
           <button
-            className="rounded-full p-4 bg-orange-500 flex border items-start"
+            className="bottom-3 right-3 fixed rounded-full p-4 bg-orange-500 flex border items-start"
             onClick={() => handleCheckOut()}
           >
             Checkout
